@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
     <title>NoteMe</title> 
@@ -14,16 +14,16 @@
     <nav>
         <ul class="nav">
             <li class="nav-item">
-                <img src="images/logo-black.jpg" alt="" width="130" height="30">
+                <img src="../images/logo-black.jpg" alt="" width="130" height="30">
             </li>
             <li class="nav-item">
-                <button class="nav-btn"><a href="mainpage.html">About</a></button>
+                <button class="nav-btn" id="navigation-about-button">About</button>
             </li>
             <li class="nav-item">
-                <button class="nav-btn"><a href="login.html">Log In</a></button>
+                <button class="nav-btn" id="navigation-log-button">Log In</button>
             </li>
             <li class="nav-item">
-                <button class="nav-btn"><a href="register.html">Sign Up</a></button>
+                <button class="nav-btn" id="navigation-register-button">Sign Up</button>
             </li>
         </ul>
     </nav>
@@ -37,9 +37,9 @@
             <p>Find your productivity happy place.</p>
             <br>
             <br>
-            <button>JOIN US</button>
+            <button id="navigation-join-button">JOIN US</button>
         </div>
-        <div><img src="images/notelaptop.png" alt=""></div>
+        <div><img src="../images/notelaptop.png" alt=""></div>
     </div>
 
     <div class="main-content-section3">
@@ -49,7 +49,7 @@
                 NoteMe helps bring order to the chaos.</p>
             <p>Gives you everything you need to keep your life organized.</p>
         </div>
-        <div><button><a href="register.html">Get Started</a></button></div>
+        <div><button id="navigation-started-button">Get Started</button></div>
     </div>
     
     <footer>
@@ -59,6 +59,9 @@
             <li><a href="register.html">Sign Up</a></li>
         </ul>
         <p class="copyright">NoteMe © 2022</p>
-</footer>
+    </footer>
+
+    <script src="../javascripts/mainpage.js"></script>
 
 </body>
+</html>

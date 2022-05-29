@@ -24,11 +24,6 @@
   justify-content: space-between;
 }
 
-@mixin opacity {
-  opacity: 0;
-  pointer-events: none;
-}
-
 *{
   box-sizing: border-box;
 } 
@@ -61,11 +56,7 @@ body {
   .nav-item {
     list-style: none;
     margin-right: 32px;
-
-    a {
-      text-decoration: none;
-      color: $white;
-    }
+    color: $white;
 
     &:first-child {
       margin-right: auto;
@@ -76,6 +67,7 @@ body {
   .nav-btn {
     padding: 8px 16px;
     font-size: 17.6px;
+    color: $white;
     background: $black;
     border: none;
     outline: none;
@@ -338,25 +330,23 @@ footer {
   margin-top: 320px;
   cursor: pointer;
 
-  a {
-    color: $white-font;
-    display: block;
-    width: 100%;
-    line-height: 50px;
-    text-decoration: none;
-    height: 50px;
-    box-sizing: border-box;
-    transition: 1s;
-    transition-property:$blue;
+  .logout {
+    padding: 10px 0;
+    transition: all 0.5s ease-in-out;
 
-    &:hover {
-      background: $blue;
+    &:hover{
+      background-color: $blue;
     }
   }
 
+  #logout-button {
+    color: $white;
+  }
+  
   i {
     font-size: 20px;
     margin-left: 40px;
+    color: $white;
   }
 }
 
@@ -501,11 +491,11 @@ footer {
     .data {
       width: 45%;
       
-      p {
+      span {
         font-size: 14px;
-        margin-top: -5px;
+        // margin-top: -55px;
         margin-left: 0;
-        margin-bottom: 30px;
+        // margin-bottom: 70px;
         font-weight: 500;
         color: $footer-font;
       }
@@ -521,7 +511,7 @@ footer {
     }
 
     h4 {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       font-size: 16px;
       color: $black;
     }
@@ -536,7 +526,7 @@ footer {
 
   button {
     width: 90px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-right: 10px;
     padding-bottom: 5px;
     padding-right: 10px;
@@ -809,7 +799,6 @@ footer {
 }
 
 .pop-up-box {
-  @include opacity();
   position: fixed;
   z-index: 5;
   top: 0;
@@ -821,7 +810,6 @@ footer {
 
 .pop-up-box .pop-up {
   @include flex-space-between();
-  @include opacity();
   position: absolute;
   z-index: 6;
   top: 50%;
@@ -831,6 +819,17 @@ footer {
   background: $neutral-grey;
   justify-content: center;
   transform: translate(-50%, -50%);
+}
+
+.pop-up-box, .pop-up-box .pop-up {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.pop-up-box.show, .pop-up-box.show .pop-up {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .pop-up .pop-up-content {
@@ -896,6 +895,17 @@ footer {
       border-radius: 4px;
       background: $blue;
       cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        background: $black;
+        transform: scale(1.1);
+      }
+
+      &:active {
+        background: $black;
+        transform: scale(0.9);
+      }
     }
   }
 }
@@ -961,6 +971,19 @@ label #sidebar_btn {
     margin-left: 210px;
     transition: all 450ms ease-in;
   }
+}
+
+.error-message {
+  color: rgb(216, 43, 43);
+  font-size: 13px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+#error-message {
+  color: rgb(216, 43, 43);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 #logo-header {
