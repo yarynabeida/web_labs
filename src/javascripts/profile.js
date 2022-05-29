@@ -47,6 +47,7 @@ function deleteUser(e) {
 
 function deleteAccountHandler(e) {
     e.preventDefault();
+
     if (deletePopUp.classList.contains('show')) {
         deleteUser();
         deletePopUp.classList.remove('show');
