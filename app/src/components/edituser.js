@@ -76,7 +76,7 @@ function EditUser() {
     const saveChangesHandler = (e) => {
         e.preventDefault();
     
-        if (password !== '' || confirmPassword !== '') {
+        if (password !== '' && confirmPassword !== '') {
             if (password !== confirmPassword) {
                 const error = 'Passwords are not the same';
                 setError(error);
