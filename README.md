@@ -12,11 +12,11 @@
 
 ## branch lab3
 Basic SPA with user management. <br />
-To start application: <br />
+To set up and start application: <br />
 ```
-git clone https://github.com/yarynabeida/web_labs.git  <br />
-cd app  <br />
-npm install  <br />
-npm start  <br />
+git clone https://github.com/yarynabeida/web_labs.git
+cd app
+npm install
+npm start
 run back-end (github repository: https://github.com/yarynabeida/AP)
 ```
