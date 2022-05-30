@@ -48,7 +48,7 @@ function Register() {
 
     const signUpButtonHandler = (e) => {
         e.preventDefault();
-    
+        
         if (password !== confirmPassword) {
             const pass = 'Passwords are not the same';
             setError(pass);
@@ -68,7 +68,8 @@ function Register() {
                 setError("");
                 return response.json();
             }
-            return response.text().then((text) => { throw new Error(text); });
+            const text = await response.text();
+            throw new Error(text);
         }).then((data) => {
             localStorage.setItem('token', data.token);
             localStorage.setItem('id', data.id);
@@ -94,7 +95,7 @@ function Register() {
                     <input type="text" id="username" onChange={handleChangeUsername} placeholder="Username" required=""/>
                     <input type="email" id="email" onChange={handleChangeEmail} placeholder="Email" required=""/>
                     <input type="password" id="password" onChange={handleChangePassword} placeholder="Password" required=""/>
-                    <input type="password" id="confirm-password" onClick={handleConfirmPassword} placeholder="Confirm password" required=""/>
+                    <input type="password" id="confirm-password" onChange={handleConfirmPassword} placeholder="Confirm password" required=""/>
                     <button type="button" className="operation-button" id="login-button" onClick={signUpButtonHandler}>Sign Up
                     </button>
                 </div>
