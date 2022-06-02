@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Sidebar } from './sidebar';
 import profileicon from '../images/profile-icon.png';
@@ -46,8 +46,9 @@ function Profile() {
                 'Content-Type': 'application/json',
             },
         }).then(() => {
-            window.localStorage.removeItem('id');
-            window.localStorage.removeItem('token');
+            localStorage.removeItem('id');
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
             navigate('/login');
         });
     }
@@ -103,7 +104,7 @@ function Profile() {
                         <p>Are you shure you want to delete your account?
                         You will not be able to restore it.</p>
                         <br></br>
-                        <button id="delete-account" onClick={deleteAccountHandler}>Yes, I`m shure</button>
+                        <button id="delete-account" onClick={deleteAccountHandler}>Yes, I`m sure</button>
                     </form>
                 </div>
             </div>
