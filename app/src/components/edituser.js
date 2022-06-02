@@ -125,7 +125,7 @@ function EditUser() {
                             <p>Are you shure you want to discard changes?
                             You will not be able to restore it.</p>
                             <br></br>
-                            <button id="discard-changes" onClick={discardChangesHandler}>Yes, I`m shure</button>
+                            <button id="discard-changes" onClick={discardChangesHandler}>Yes, I`m sure</button>
                         </form>
                     </div>
                 </div>
