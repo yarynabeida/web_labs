@@ -8,13 +8,13 @@ export function Navbar(logo, main, login, register) {
                 <img src={logo} alt="" width="130" height="30"></img>
             </li>
             <li className="nav-item">
-                <button className="nav-btn" id="navigation-about-button" onClick={main}>About</button>
+                <button className="nav-btn" data-testid="change-main-button" id="navigation-about-button" onClick={main}>About</button>
             </li>
             <li className="nav-item">
-                <button className="nav-btn" id="navigation-log-button" onClick={login}>Log In</button>
+                <button className="nav-btn" data-testid="change-login-button" id="navigation-log-button" onClick={login}>Log In</button>
             </li>
             <li className="nav-item">
-                <button className="nav-btn" id="navigation-register-button" onClick={register}>Sign Up</button>
+                <button className="nav-btn" data-testid="change-signup-button" id="navigation-register-button" onClick={register}>Sign Up</button>
             </li>
         </ul>
     </nav>

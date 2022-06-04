@@ -119,13 +119,13 @@ function EditUser() {
                     <div className="pop-up-content">
                         <header>
                             <p>Discard</p>
-                            <i className='bx bx-plus' onClick={closeIconHandler}></i>
+                            <i data-testid="close-icon" className='bx bx-plus' onClick={closeIconHandler}></i>
                         </header>
                         <form action="#">
                             <p>Are you shure you want to discard changes?
                             You will not be able to restore it.</p>
                             <br></br>
-                            <button id="discard-changes" onClick={discardChangesHandler}>Yes, I`m sure</button>
+                            <button data-testid="discard-changes" id="discard-changes" onClick={discardChangesHandler}>Yes, I`m sure</button>
                         </form>
                     </div>
                 </div>
@@ -164,8 +164,8 @@ function EditUser() {
 
                             { ErrorDisplay(error, alert)}
                             <br></br>
-                            <button id="discard-button" onClick={discardButtonHandler}><i className='bx bx-x'></i>Discard</button>
-                            <button id="save-button" onClick={saveChangesHandler}><i className='bx bx-check'></i>Save</button>
+                            <button data-testid="discard-button" id="discard-button" onClick={discardButtonHandler}><i className='bx bx-x'></i>Discard</button>
+                            <button data-testid="handlechange" id="save-button" onClick={saveChangesHandler}><i className='bx bx-check'></i>Save</button>
                         </div>
                     </div>
                 </div>

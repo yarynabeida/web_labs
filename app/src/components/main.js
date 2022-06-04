@@ -41,7 +41,7 @@ function Main() {
                     NoteMe helps bring order to the chaos.</p>
                 <p>Gives you everything you need to keep your life organized.</p>
             </div>
-            <div><button id="navigation-started-button" onClick={register}>Get Started</button></div>
+            <div><button data-testid="change-sign-button" id="navigation-started-button" onClick={register}>Get Started</button></div>
         </div>
         <footer>
             <ul>

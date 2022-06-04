@@ -54,7 +54,9 @@ function Register() {
             setError(pass);
             return;
         }
-    
+        
+        const headers = new Headers();
+        headers.set('content-type', 'application/json');
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({
@@ -62,7 +64,7 @@ function Register() {
                 email: email,
                 password: password,
             }),
-            headers: { 'Content-Type': 'application/json' },
+            headers,
         }).then(async (response) => {
             if (response.ok) {
                 setError("");
@@ -71,32 +73,28 @@ function Register() {
             const text = await response.text();
             throw new Error(text);
         }).then((data) => {
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('id', data.id);
-            localStorage.setItem('username', data.name);
-            navigate("/profile");
+            // localStorage.setItem('token', data.token);
+            // localStorage.setItem('id', data.id);
+            // localStorage.setItem('username', data.name);
+            // navigate("/profile");
         }).catch((errors) => {
             let error = errors.message
             setError(error);
         });
     }
 
-    if (window.localStorage.getItem('token')) {
-        navigate("/profile");
-    }
-
     return (
         <div className="back">
             { Navbar(logo, main, login, register) };
             <div className="container">
-                <div className="form" id="login-form">
+                <div className="form" data-testid="register-form" id="login-form">
                     <h2>Create Account</h2>
                     { ErrorDisplay(error, alert)}
                     <input type="text" id="username" onChange={handleChangeUsername} placeholder="Username" required=""/>
                     <input type="email" id="email" onChange={handleChangeEmail} placeholder="Email" required=""/>
                     <input type="password" id="password" onChange={handleChangePassword} placeholder="Password" required=""/>
                     <input type="password" id="confirm-password" onChange={handleConfirmPassword} placeholder="Confirm password" required=""/>
-                    <button type="button" className="operation-button" id="login-button" onClick={signUpButtonHandler}>Sign Up
+                    <button type="button" data-testid="handleregister" className="operation-button" id="login-button" onClick={signUpButtonHandler}>Sign Up
                     </button>
                 </div>
 

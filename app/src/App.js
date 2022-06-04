@@ -31,3 +31,5 @@ function App() {
 }
 
 export default App;
+
+// npm test -- --coverage --watchAll=false

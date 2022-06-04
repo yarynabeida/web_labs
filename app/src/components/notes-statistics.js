@@ -28,26 +28,26 @@ function NotesStatisitics() {
             return ;
         } 
         else {
-            let statisticsItems = statistics.map((stat) =>
-                <li className="statistics">
-                    <div className="details">
-                        <p>{stat.note.name}</p>
-                        <span>{stat.note.text}</span>
-                    </div>
-                    <div className="tags">
-                        <button className="tag">#{stat.note.idTag}</button>
-                    </div>
-                    <div className="bottom-content"></div>
-                    <div className="editors">
-                        <h1><i className='bx bxs-group'></i>Editors</h1>
-                        <p>{stat.username}</p>
-                        <br></br>
-                        <br></br>
-                        <p>Edited last by {stat.username} at {stat.statistic.time}</p>
-                    </div>
-                </li>
-            );
-            return statisticsItems;
+            // let statisticsItems = statistics.map((stat) =>
+            //     <li className="statistics">
+            //         <div className="details">
+            //             <p>{stat.note.name}</p>
+            //             <span>{stat.note.text}</span>
+            //         </div>
+            //         <div className="tags">
+            //             <button className="tag">#{stat.note.idTag}</button>
+            //         </div>
+            //         <div className="bottom-content"></div>
+            //         <div className="editors">
+            //             <h1><i className='bx bxs-group'></i>Editors</h1>
+            //             <p>{stat.username}</p>
+            //             <br></br>
+            //             <br></br>
+            //             <p>Edited last by {stat.username} at {stat.statistic.time}</p>
+            //         </div>
+            //     </li>
+            // );
+            // return statisticsItems;
         }
     }
 

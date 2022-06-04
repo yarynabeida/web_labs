@@ -28,7 +28,7 @@ export function Sidebar(profileicon, username, logout) {
             <div className="bottom-content">
                 <div className="logout">
                     <i className='bx bx-log-out icon' ></i>
-                    <span className="text nav-text" id="logout-button" onClick={logout}>Logout</span>
+                    <span className="text nav-text" data-testid="logout" id="logout-button" onClick={logout}>Logout</span>
                 </div>
             </div>
         </nav>

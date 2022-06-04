@@ -5,7 +5,6 @@ import { Sidebar } from './sidebar';
 import profileicon from '../images/profile-icon.png';
 
 function Home() {
-    console.log(localStorage);
     const url = 'http://127.0.0.1:5000'
 
     const [error, setError] = useState('');
@@ -91,7 +90,7 @@ function Home() {
                 setError('');
                 return response.json();
             }
-            return response.text().then((text) => { throw new Error(text); });
+            // return response.text().then((text) => { throw new Error(text); });
         }).then((data) => {
             console.log(data);
             setNotes(data);
@@ -105,8 +104,7 @@ function Home() {
             }).then(async (response) => {
                 if (response.ok) {
                     return response.json();
-                }
-                return response.text().then((text) => { throw new Error(text); });
+                }     
             }).then((data) => {
                 setNotes(data);
             });
@@ -125,7 +123,7 @@ function Home() {
                 <p>NOTES</p>
                 <div className="search-box">
                     <i className='bx bx-search icon'></i>
-                    <input type="text" onChange={getNote}></input>
+                    <input type="text" data-testid="findnote" onChange={getNote}></input>
                 </div>
                 <br></br>
                 <ul className="wrapper">

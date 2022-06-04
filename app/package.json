@@ -1,22 +1,58 @@
 {
   "name": "app",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "collectCoverageFrom": [
+      "./src/components/test/App.test.js",
+      "./src/components/App.js",
+      "./src/components/test/login.test.js",
+      "./src/components/login.js",
+      "./src/components/test/register.test.js",
+      "./src/components/register.js",
+      "./src/components/test/main.test.js",
+      "./src/components/main.js",
+      "./src/components/test/edit.test.js",
+      "./src/components/edituser.js",
+      "./src/components/test/profile.test.js",
+      "./src/components/profile.js",
+      "./src/components/test/home.test.js",
+      "./src/components/home.js",
+      "./src/components/test/notes-statistics.test.js",
+      "./src/components/notes-statistics.js",
+      "./src/components/error.js",
+      "./src/components/navbar.js",
+      "./src/components/sidebar.js"
+    ]
+
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.17.9",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "jest-fetch-mock": "^3.0.3",
+    "axios": "^0.27.2",
+    "base-64": "^1.0.0",
+    "node-fetch": "^3.2.4",
+    "node-sass": "^7.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-select": "^5.3.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "set PORT=8000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix --ext .js,.jsx ."
   },
   "eslintConfig": {
     "extends": [

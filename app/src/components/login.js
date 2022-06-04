@@ -36,12 +36,12 @@ function Login() {
 
     const loginInButtonHandler = (e) => {
         e.preventDefault();
-    
+        
+        const headers = new Headers();
+        headers.set('content-type', 'application/json');
         fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers,
             body: JSON.stringify({
                 username: username,
                 password: password,
@@ -63,21 +63,17 @@ function Login() {
         });
     }
 
-    if (window.localStorage.getItem('token')) {
-        navigate("/profile");
-    }
-
     return (
         <div className="back">
             { Navbar(logo, main, login, register) };
 
             <div className="container">
                 <div className="form" id="login-form">
-                    <h2>Log In</h2>
+                    <h2 data-testid="login-form">Log In</h2>
                     { ErrorDisplay(error, alert)}
                     <input type="text" id="username" onChange={handleChangeUsername} placeholder="Username" required=""/>
                     <input type="password" id="password" onChange={handleChangePassword} placeholder="Password" required=""/>
-                    <button type="button" className="operation-button" id="login-button" onClick={loginInButtonHandler}>Log In
+                    <button type="button" data-testid="handlelogin" className="operation-button" id="login-button" onClick={loginInButtonHandler}>Log In
                     </button>
                 </div>
 
@@ -88,7 +84,7 @@ function Login() {
                             <p>Sign up and discover great amount of new opportunities!</p>
                         </div>
                         <div>
-                            <button className="button" id="change-form-button" onClick={register}>Sign Up</button>
+                            <button className="button" data-testid="change-sign-button" id="change-form-button" onClick={register}>Sign Up</button>
                         </div>
                     </div>
                 </div>

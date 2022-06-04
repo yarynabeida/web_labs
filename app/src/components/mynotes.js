@@ -276,11 +276,11 @@ function MyNotes() {
                         <form action="#">
                             <div className="row title">
                                 <label>Title</label>
-                                <input type="text" spellCheck="false" onChange={addTitle}></input>
+                                <input data-testid="title" type="text" spellCheck="false" onChange={addTitle}></input>
                             </div>
                             <div className="row description">
                                 <label>Description</label>
-                                <textarea spellCheck="false" onChange={addDescription}></textarea>
+                                <textarea data-testid="description" spellCheck="false" onChange={addDescription}></textarea>
                             </div>
                             <button onClick={addNote}>Add Note</button>
                         </form>
@@ -298,11 +298,11 @@ function MyNotes() {
                         <form action="#">
                             <div className="row title">
                                 <label>Title</label>
-                                <input type="text" spellCheck="false" onChange={addTitle}></input>
+                                <input  data-testid="title" type="text" spellCheck="false" onChange={addTitle}></input>
                             </div>
                             <div className="row description">
                                 <label>Description</label>
-                                <textarea spellCheck="false" onChange={addDescription}></textarea>
+                                <textarea data-testid="description" spellCheck="false" onChange={addDescription}></textarea>
                             </div>
                             <button onClick={updateNote}>Save</button>
                         </form>

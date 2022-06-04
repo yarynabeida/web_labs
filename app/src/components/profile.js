@@ -76,11 +76,11 @@ function Profile() {
                     setError('');
                     return response.json();
                 }
-                return response.text().then((text) => { throw new Error(text); });
+                // return response.text().then((text) => { throw new Error(text); });
             }).then((data) => {
-                setUsername(data.name);
-                setEmail(data.email);
-                window.localStorage.setItem('username', data.name);
+                // setUsername(data.name);
+                // setEmail(data.email);
+                // window.localStorage.setItem('username', data.name);
             });
           }
         if (error === ''){
@@ -98,13 +98,13 @@ function Profile() {
                 <div className="pop-up-content">
                     <header>
                         <p>Delete Account</p>
-                        <i className='bx bx-plus' onClick={closeIconHandler}></i>
+                        <i className='bx bx-plus' data-testid="close-icon" onClick={closeIconHandler}></i>
                     </header>
                     <form action="#">
                         <p>Are you shure you want to delete your account?
                         You will not be able to restore it.</p>
                         <br></br>
-                        <button id="delete-account" onClick={deleteAccountHandler}>Yes, I`m sure</button>
+                        <button data-testid="handledelete" id="delete-account" onClick={deleteAccountHandler}>Yes, I`m sure</button>
                     </form>
                 </div>
             </div>
@@ -128,7 +128,7 @@ function Profile() {
                                 <span id="email">{email}</span>
                              </div>
                         </div>
-                        <button id="delete-button" onClick={deleteButtonHandler}><i className='bx bx-trash'></i>Delete</button>
+                        <button data-testid="delete-button" onClick={deleteButtonHandler}><i className='bx bx-trash'></i>Delete</button>
                         <button id="edit-button" onClick={editButtonHandler}><i className='bx bx-pencil' ></i>Edit</button>
                     </div>
                 </div>
